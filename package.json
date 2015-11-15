@@ -5,4 +5,5 @@
   "dependencies": {
     "mongodb": "^1.4.7"
   },
+  "devDependencies": {}
 }
