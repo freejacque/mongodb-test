@@ -1,5 +1,6 @@
 'use strict';
 
+//  require MangoClient class from the mongodb library
 var MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect(
