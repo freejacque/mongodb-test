@@ -3,6 +3,7 @@
 //  require MangoClient class from the mongodb library
 var MongoClient = require('mongodb').MongoClient;
 
+//  the connect method is from the MongoClient class
 MongoClient.connect(
   'mongodb://127.0.0.1:27017/accounting',
   function(err, connection) {
