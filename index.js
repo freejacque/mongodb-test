@@ -8,6 +8,9 @@ var MongoClient = require('mongodb').MongoClient;
 MongoClient.connect(
   'mongodb://127.0.0.1:27017/accounting',
   function(err, connection) {
+
+    // create a collection object that represents the customers
+    // collection within the accounting db
     var collection = connection.connection('customers');
 
     collection.insert({'name': 'Jane Doe'}, function(err, count) {
