@@ -13,8 +13,8 @@ MongoClient.connect(
     // collection within the accounting db
     var collection = connection.connection('customers');
 
+    // use the insert method from the customers collection
     collection.insert({'name': 'Jane Doe'}, function(err, count) {
-
       collection.find().toArray(function(err, documents) {
         console.dir(documents);
         connection.close();
