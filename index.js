@@ -1,6 +1,6 @@
 'use strict';
 
-//  require MangoClient class from the mongodb library
+//  require MongoClient class from the mongodb library
 var MongoClient = require('mongodb').MongoClient;
 
 //  the connect method is from the MongoClient class
