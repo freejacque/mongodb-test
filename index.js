@@ -13,7 +13,7 @@ MongoClient.connect(
     // collection within the accounting db
     var collection = connection.connection('customers');
 
-    collection.update({}, {'$set': {'age': 24}}, function(err, count) {
+    collection.update({}, {'$set': {'age': 24}}, {'multi': true}, function(err, count) {
 
       console.log('Updated', count, 'documents');
 
