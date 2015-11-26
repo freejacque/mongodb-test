@@ -13,6 +13,8 @@ MongoClient.connect(
     // collection within the accounting db
     var collection = connection.connection('customers');
 
+    // first param is the filter, in this case an empty object
+    // this will cause all documents in the collection to be updated
     collection.update({}, {'$set': {'age': 24}}, {'multi': true}, function(err, count) {
 
       console.log('Updated', count, 'documents');
