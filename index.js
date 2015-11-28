@@ -21,6 +21,17 @@ MongoClient.connect(
       });
     };
 
+    var doInsert = function(i) {
+      if(i < 20) {
+        var value = Math.floor(Math.random() * 10);
+        collection.insert(
+          {'n': '#' + i, 'v': value},
+          function(err, count) {
+            doInsert(i + 1);
+          });
+      }
+    }
+
     // first param is the filter, in this case an empty object
     // this will cause all documents in the collection to be updated
     collection.update({}, {'$set': {'age': 24}}, {'multi': true}, function(err, count) {
