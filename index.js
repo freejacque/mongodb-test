@@ -13,7 +13,7 @@ MongoClient.connect(
     // collection within the accounting db
     var collection = connection.connection('customers');
 
-    //
+    // prints all documents
     var doFind = function(callback) {
       collection.find().toArray(function (err, documents) {
         // .dir() displays an interactive list of the objects properties
