@@ -29,8 +29,16 @@ MongoClient.connect(
           function(err, count) {
             doInsert(i + 1);
           });
+      } else {
+        console.log();
+        console.log('Inserted', i, 'documents:');
+        doFind(function() {
+          doUpdate();
+        });
       }
-    }
+    };
+
+
 
     // first param is the filter, in this case an empty object
     // this will cause all documents in the collection to be updated
