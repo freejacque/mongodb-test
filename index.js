@@ -16,12 +16,13 @@ MongoClient.connect(
     //
     var doFind = function(callback) {
       collection.find().toArray(function (err, documents) {
+        // .dir() displays an interactive list of the objects properties
         console.dir(documents);
         callback();
       });
     };
 
-    // recursive function, inserts  20 docs into the collection
+    // recursive function, inserts 20 docs into the collection
     var doInsert = function(i) {
       if(i < 20) {
         var value = Math.floor(Math.random() * 10);
