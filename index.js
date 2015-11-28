@@ -42,6 +42,7 @@ MongoClient.connect(
       }
     };
 
+    // files w/v > 5 will have 'valuable' set to true
     var doUpdate = function() {
       collection.update(
         {'v': {'$gt': 5}},
