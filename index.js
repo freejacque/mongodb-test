@@ -42,7 +42,8 @@ MongoClient.connect(
       }
     };
 
-    // files w/v > 5 will have 'valuable' set to true
+    // files w/v > 5 will have 'valuable' set to true, all the files are listed
+    // then all files are deleted.
     var doUpdate = function() {
       collection.update(
         {'v': {'$gt': 5}},
