@@ -38,7 +38,21 @@ MongoClient.connect(
       }
     };
 
-
+    var doUpdate = function() {
+      collection.update(
+        {'v': {'$gt': 5}},
+        {'$set': {'valuable': true}},
+        {'multi': true},
+        function(err, count) {
+          console.log();
+          console.log('Updated', count, 'documents:');
+          doFind(function() {
+            collection.remove({}, function() {
+              connection.close();
+            });
+          });
+        });
+    };
 
     // first param is the filter, in this case an empty object
     // this will cause all documents in the collection to be updated
