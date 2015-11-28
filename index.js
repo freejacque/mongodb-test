@@ -21,10 +21,13 @@ MongoClient.connect(
       });
     };
 
+    // recursive function, inserts  20 docs into the collection
     var doInsert = function(i) {
       if(i < 20) {
         var value = Math.floor(Math.random() * 10);
         collection.insert(
+          // n = serial number of the insert operation
+          // v = value = random number between 0 and 9
           {'n': '#' + i, 'v': value},
           function(err, count) {
             doInsert(i + 1);
@@ -32,6 +35,7 @@ MongoClient.connect(
       } else {
         console.log();
         console.log('Inserted', i, 'documents:');
+        // after 20 inserts call doFind
         doFind(function() {
           doUpdate();
         });
