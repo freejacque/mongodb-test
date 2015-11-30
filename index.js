@@ -15,7 +15,7 @@ MongoClient.connect(
 
     // prints all documents
     var doFind = function(callback) {
-
+      //  only documents with v = 5 will be located and printed
       collection.find({'v': 5}).toArray(function (err, documents) {
         // .dir() displays an interactive list of the objects properties
         //  this is non-standard & shouldn't be used on web-facing production sites
