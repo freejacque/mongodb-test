@@ -17,6 +17,7 @@ MongoClient.connect(
     var doFind = function(callback) {
       //  only documents with v = 5 will be located and printed
       collection.find(
+        // having multiple filters is an AND query
         {
           'v': 5,
           'valuable': true
