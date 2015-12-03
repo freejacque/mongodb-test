@@ -19,7 +19,7 @@ MongoClient.connect(
       collection.find(
         // having multiple filters is an AND query
         {
-          'v': 5,
+          'v': {'$lt': 8 },
           'valuable': true
         }
         ).toArray(function (err, documents) {
