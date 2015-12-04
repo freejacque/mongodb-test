@@ -72,3 +72,13 @@ MongoClient.connect(
     doInsert(0);
 
   });
+
+
+collection.find(
+  {
+    '$or': [
+      {'v': 5},
+      {'v': 8}
+    ]
+  }
+).toArray(function (err, documents) {...})
