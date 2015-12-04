@@ -74,6 +74,7 @@ MongoClient.connect(
   });
 
 
+// this is an example of an OR query
 collection.find(
   {
     '$or': [
