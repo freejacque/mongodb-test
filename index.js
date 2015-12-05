@@ -101,3 +101,14 @@ MongoClient.connect(
       'n': /^#1/
     }
   }).toArray(function (err, documents) {})
+
+  collection.find(
+    {
+      'n': /^#1/
+    },
+    {
+      'limit': 5,
+      'skip' : 2,
+      'sort' : 'v'
+    }
+  ). toArray(function (err, documents) {})
