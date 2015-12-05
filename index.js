@@ -102,6 +102,7 @@ MongoClient.connect(
     }
   }).toArray(function (err, documents) {})
 
+  // the find method can take an options parameter: limit, skip & sort
   collection.find(
     {
       'n': /^#1/
