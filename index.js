@@ -103,6 +103,8 @@ MongoClient.connect(
   }).toArray(function (err, documents) {})
 
   // the find method can take an options parameter: limit, skip & sort
+  //  retrieves five docs whose n value start withs #1, skips the first two matches
+  //  then sorts the resulting set by v value
   collection.find(
     {
       'n': /^#1/
