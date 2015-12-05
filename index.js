@@ -84,6 +84,7 @@ MongoClient.connect(
 //   }
 // ).toArray(function (err, documents) {...})
 
+// this is an example of an AND & OR query
   collection.find({
     'v': {'$gt': 3},
     '$or': [
