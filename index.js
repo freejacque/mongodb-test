@@ -85,7 +85,7 @@ MongoClient.connect(
 // ).toArray(function (err, documents) {...})
 
 // this is an example of an AND & OR query
-// retrieve all values > 3 AND with n = 5 or n = 10
+// retrieve all values > 3 AND with n = #5 or n = #10
   collection.find({
     'v': {'$gt': 3},
     '$or': [
