@@ -75,11 +75,19 @@ MongoClient.connect(
 
 
 // this is an example of an OR query
-collection.find(
-  {
+// collection.find(
+//   {
+//     '$or': [
+//       {'v': 5},
+//       {'v': 8}
+//     ]
+//   }
+// ).toArray(function (err, documents) {...})
+
+  collection.find({
+    'v': {'$gt': 3},
     '$or': [
-      {'v': 5},
-      {'v': 8}
+      {'n': '#5'},
+      {'n': '#10'}
     ]
-  }
-).toArray(function (err, documents) {...})
+  }).toArray(function (err, documents) {})
