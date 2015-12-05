@@ -95,3 +95,8 @@ MongoClient.connect(
   }).toArray(function (err, documents) {})
 
 // use regex for the n attribute because it holds a string value
+  collection.find({
+    {
+      'n': /^#1/
+    }
+  }).toArray(function (err, documents) {})
