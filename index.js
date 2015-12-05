@@ -95,6 +95,7 @@ MongoClient.connect(
   }).toArray(function (err, documents) {})
 
 // use regex for the n attribute because it holds a string value
+// matches all docs that has n value starting with #1
   collection.find({
     {
       'n': /^#1/
