@@ -116,5 +116,6 @@ MongoClient.connect(
     }
   ). toArray(function (err, documents) {})
 
-
+    // this sort matches docs by v value in ascending order, docs with the same
+    // v are then ordered by n value in descending order
       'sort' : [['v', 'asc'], ['n', 'desc']]
