@@ -115,3 +115,6 @@ MongoClient.connect(
       'sort' : 'v'
     }
   ). toArray(function (err, documents) {})
+
+
+      'sort' : [['v', 'asc'], ['n', 'desc']]
