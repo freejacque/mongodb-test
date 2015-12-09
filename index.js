@@ -119,3 +119,13 @@ MongoClient.connect(
     // this sort matches docs by v value in ascending order, docs with the same
     // v are then ordered by n value in descending order
       'sort' : [['v', 'asc'], ['n', 'desc']]
+
+
+      collection.update(
+        {'n': /^#1/},
+        {'$set': {'v': 5}},
+        {'multi': true},
+        function(err, count) {
+          // ...
+        }
+      )
