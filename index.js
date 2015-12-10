@@ -120,7 +120,7 @@ MongoClient.connect(
     // v are then ordered by n value in descending order
       'sort' : [['v', 'asc'], ['n', 'desc']]
 
-
+      // set v to 5 for docs with n strating with #1
       collection.update(
         {'n': /^#1/},
         {'$set': {'v': 5}},
