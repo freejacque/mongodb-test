@@ -130,3 +130,11 @@ MongoClient.connect(
           // ...
         }
       )
+
+      collection.update(
+        {'n': /^#1/},
+        {'$inc': {'v': +1}},
+        {'multi': true},
+        function(err, count) {
+          // ...
+        })
