@@ -130,7 +130,7 @@ MongoClient.connect(
           // ...
         }
       )
-
+      // numeric attributes can be increased
       collection.update(
         {'n': /^#1/},
         {'$inc': {'v': +1}},
