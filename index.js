@@ -138,4 +138,13 @@ MongoClient.connect(
         {'multi': true},
         function(err, count) {
           // ...
-        })
+      })
+
+      collection.update(
+        {'n': /^#1/},
+        {'$mul': {'v': 2}},
+        {'multi': true},
+        function(err, count) {
+          // ...
+        }
+      )
