@@ -131,6 +131,7 @@ MongoClient.connect(
         }
       )
       // numeric attributes can be increased
+      // there is no $dec operation increase by -1 instead
       collection.update(
         {'n': /^#1/},
         {'$inc': {'v': +1}},
