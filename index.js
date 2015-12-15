@@ -140,6 +140,7 @@ MongoClient.connect(
           // ...
       })
 
+      // update with multiplication
       collection.update(
         {'n': /^#1/},
         {'$mul': {'v': 2}},
