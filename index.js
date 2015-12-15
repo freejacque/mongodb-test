@@ -154,3 +154,4 @@ MongoClient.connect(
     // $rename - renames a field
     // $unset - removes a specified field
     // $min - only updates the field if the specified value < the present value
+    // $max - only updates the field if the specified value > the present value
