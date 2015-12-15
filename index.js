@@ -152,3 +152,4 @@ MongoClient.connect(
 
     // other operators:
     // $rename - renames a field
+    // $unset - removes a specified field
