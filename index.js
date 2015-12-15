@@ -149,3 +149,6 @@ MongoClient.connect(
           // ...
         }
       )
+
+    // other operators:
+    // $rename - renames a field
