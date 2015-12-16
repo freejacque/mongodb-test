@@ -155,3 +155,4 @@ MongoClient.connect(
     // $unset - removes a specified field
     // $min - only updates the field if the specified value < the present value
     // $max - only updates the field if the specified value > the present value
+    // $currentDate - sets the value of the field to the current date
