@@ -156,3 +156,12 @@ MongoClient.connect(
     // $min - only updates the field if the specified value < the present value
     // $max - only updates the field if the specified value > the present value
     // $currentDate - sets the value of the field to the current date
+
+    collection.update(
+      {'n': '#20'},
+      {'$set': {'n': '20', 'v': 1}},
+      {'multi': true, 'upsert': true},
+      function(err, count) {
+        // ...
+      }
+    )
