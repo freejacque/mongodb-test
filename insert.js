@@ -6,7 +6,7 @@ MongoClient.connect(
   'mongodb://127.0.0.1:27017/accounting',
   function(err, connection) {
     var collection = connection.collection('customers');
-
+    //  insert 200,000 docs with random values
     var doInsert = function(i) {
       if(i < 200000) {
         var value = Math.floor(Math.random() * 10);
