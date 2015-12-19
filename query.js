@@ -7,6 +7,7 @@ MongoClient.connect(
   function(err, connection) {
     var collection = connection.collection('customers');
 
+    //  of files with a v > 5, skips the first 100,000 files and then lists 10, sorted by v
     collection.find(
       {'v': {'$gt': 5}},
       {
