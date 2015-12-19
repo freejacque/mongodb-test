@@ -157,6 +157,9 @@ MongoClient.connect(
     // $max - only updates the field if the specified value > the present value
     // $currentDate - sets the value of the field to the current date
 
+
+    // if the filter matches any existing docs the update will be performed
+    //  if not, a new doc is inserted
     collection.update(
       {'n': '#20'},
       {'$set': {'n': '20', 'v': 1}},
