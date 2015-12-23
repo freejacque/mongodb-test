@@ -19,6 +19,23 @@ MongoClient.connect(
         }
       });
 
+    var doInsert = function(i) {
+      if(i < 20) {
+        var value = Math.floor(Math.random() * 10);
+        collection.insert(
+          {'n': '#' + i, 'v': value},
+          function(err, count) {
+            doInsert(i + 1);
+          });
+      } else {
+        console.log();
+        console.log('Inserted', i, 'documents:');
+        doFind(function () {
+          doUpdate();
+        });
+      }
+    };
+
 
     }
   }
