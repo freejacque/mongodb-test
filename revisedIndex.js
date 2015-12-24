@@ -18,6 +18,7 @@ MongoClient.connect(
           console.dir(document);
         }
       });
+    };
 
     var doInsert = function(i) {
       if(i < 20) {
@@ -36,7 +37,20 @@ MongoClient.connect(
       }
     };
 
+    var doUpdate = function() {
+      collection.update(
+        {'n': /^#1/},
+        {'multi': true},
+        function(err, count) {
+          console.log();
+          console.log('Updated', count, 'documents:');
+          doFind(function () {
+            collection.remove({}, function() {
+              connection.close();
+            });
+          });
+        });
+    };
 
-    }
-  }
-  )
+    doInsert(0);
+  });
