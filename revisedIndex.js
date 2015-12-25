@@ -54,3 +54,22 @@ MongoClient.connect(
 
     doInsert(0);
   });
+
+
+
+var doFind = function(callback) {
+
+  var stream = collection.find(
+    {},
+    {'sort': '_id'}
+  ).stream();
+
+  stream.on('data', function(document) {
+    console.dir(document);
+  });
+
+  stream.on('close', function(){
+    callback();
+  });
+
+};
