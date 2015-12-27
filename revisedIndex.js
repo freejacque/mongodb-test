@@ -56,7 +56,7 @@ MongoClient.connect(
   });
 
 
-
+// mongodb driver includes a streaming API for accessing records
 var doFind = function(callback) {
 
   var stream = collection.find(
