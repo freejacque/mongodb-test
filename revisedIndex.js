@@ -59,6 +59,7 @@ MongoClient.connect(
 // mongodb driver includes a streaming API for accessing records
 var doFind = function(callback) {
 
+  // the stream obj returned by collection.find().stream() implements the stream.Readable interface
   var stream = collection.find(
     {},
     {'sort': '_id'}
